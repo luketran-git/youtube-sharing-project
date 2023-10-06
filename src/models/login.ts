@@ -67,7 +67,7 @@ const login = createModel<RootModel>()({
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify({ username, password });
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch("https://youtube-exam-service.onrender.com/login", {
           method: "POST",
           headers: myHeaders,
           body: raw,
@@ -95,7 +95,7 @@ const login = createModel<RootModel>()({
           "Authorization",
           `Bearer ${localStorage.getItem("token")}`
         );
-        const response = await fetch("http://localhost:3000/logout", {
+        const response = await fetch("https://youtube-exam-service.onrender.com/logout", {
           method: "POST",
           headers: myHeaders,
         });
@@ -124,7 +124,7 @@ const login = createModel<RootModel>()({
           return;
         }
 
-        const response = await fetch("http://localhost:3000/user", {
+        const response = await fetch("https://youtube-exam-service.onrender.com/user", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
